@@ -14,5 +14,11 @@ function countVowels(str) {
     }
     return count;
   }
-  let ans=countVowels("Hello World");
-  console.log(ans);
+
+  app.get('/countVowels',(req,res)=>{
+    let string=req.body.str;
+    let vowels=countVowels(string);
+    res.send({"vow":vowels});
+  })
+
+
