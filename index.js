@@ -15,10 +15,19 @@ function countVowels(str) {
     return count;
   }
 
+
+  //Get API
   app.get('/countVowels',(req,res)=>{
-    let string=req.body.str;
+    let string=req.body.str;  //str is key in which the string value is requested
     let vowels=countVowels(string);
     res.send({"vow":vowels});
   })
+
+  //Port+Ip= Socket
+  const port =3001;
+  const ip="localhost";
+  app.listen(port,ip,()=>{
+    console.log("Server is listening");
+  });
 
 
