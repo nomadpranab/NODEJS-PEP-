@@ -5,7 +5,7 @@ app.use(express.json());
 app.get('/add',(req,res)=>{
     const num1=Number(req.query.num1);
     const num2=Number(req.query.num2);
-    if(isNaN(a)||isNaN(b))
+    if(isNaN(num1)||isNaN(num2))
     {
         res.status(400).send({"error": "Paramneters are not valid"});
     }
